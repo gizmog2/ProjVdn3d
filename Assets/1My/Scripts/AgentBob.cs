@@ -45,4 +45,12 @@ public class AgentBob : MonoBehaviour
 
         agent.SetDestination(currentPosition);
     }
+
+    private void OnEnable()
+    {
+        if(agent != null)
+        {
+            agent.SetDestination(currentPosition);
+        }
+    }
 }

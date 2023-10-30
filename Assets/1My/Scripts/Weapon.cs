@@ -65,10 +65,15 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(shootPoint.position, shootPoint.TransformDirection(Vector3.forward), out ray, shootDistance))
         {
             DrawLine(shootPoint.position, ray.point);
+            if (ray.collider.GetComponent<EnemyGet>())
+            {
+                ray.collider.GetComponent<EnemyGet>().Pause();
+            }
         }
         else
         {
             DrawLine(shootPoint.position, shootPoint.TransformDirection(Vector3.forward) * shootDistance);
+
         }
     }
 
