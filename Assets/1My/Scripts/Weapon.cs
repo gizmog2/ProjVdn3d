@@ -69,6 +69,11 @@ public class Weapon : MonoBehaviour
             {
                 ray.collider.GetComponent<EnemyGet>().Pause();
             }
+
+            if (ray.collider.GetComponent<ChomperHealth>())
+            {
+                ray.collider.GetComponent<ChomperHealth>().DecreaceHealth();
+            }
         }
         else
         {

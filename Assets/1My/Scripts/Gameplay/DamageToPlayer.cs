@@ -14,7 +14,7 @@ public class DamageToPlayer : MonoBehaviour
             return;
         }
 
-        var health = other.GetComponentInChildren<PlayerUI>();
+        var health = other.GetComponentInChildren<HealthUI>();
 
         if (health == null)
         {

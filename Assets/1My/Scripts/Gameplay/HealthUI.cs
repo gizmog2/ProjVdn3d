@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerUI : MonoBehaviour
+public class HealthUI : MonoBehaviour
 {
     [SerializeField] Behaviour[] components;
 
@@ -18,6 +18,8 @@ public class PlayerUI : MonoBehaviour
     {
         UpdateUI();       
     }
+
+    public float GetHealth { get => HealthCount; }
 
     public void DecreaceHealth(float deltaHealth)
     {
