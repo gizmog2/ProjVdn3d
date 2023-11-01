@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HealthUI : MonoBehaviour
 {
     [SerializeField] Behaviour[] components;
+    [SerializeField] Behaviour[] componentsToActivate;
 
     [SerializeField] Image HealthImage;
     [SerializeField] float HealthCount;
@@ -44,6 +45,11 @@ public class HealthUI : MonoBehaviour
         foreach (var component in components)
         {
             component.enabled = false;
+        }
+
+        foreach (var component in componentsToActivate)
+        {
+            component.enabled = true;
         }
 
         var componentCollider = GetComponent<CapsuleCollider>();

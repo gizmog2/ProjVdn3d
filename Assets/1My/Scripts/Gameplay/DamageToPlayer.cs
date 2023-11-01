@@ -7,6 +7,8 @@ public class DamageToPlayer : MonoBehaviour
 {
     [SerializeField] float decreaceHealth;
 
+    public float DecreaceHealth { get => decreaceHealth; set =>decreaceHealth = value; }
+
     private void OnTriggerStay(Collider other)
     {
         if (!enabled)

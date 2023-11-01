@@ -13,6 +13,8 @@ public class AgentBob : MonoBehaviour
 
     private Vector3 currentPosition;
 
+    public Transform GetPlayer { get => player; set => player = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,12 @@ public class AgentBob : MonoBehaviour
         agent.SetDestination(currentPosition);
     }
 
-    private void OnEnable()
+    public void SetupPositionToStart()
+    {
+        currentPosition = startPosition;
+    }
+
+    public void OnEnable()
     {
         if(agent != null)
         {
